@@ -1,7 +1,10 @@
 # Python-cp-cheatSheet
 A python cheat sheet for competitive programming (quick reference guide)
 
+# index
 [Language Mechanics](#language-mechanics)
+
+[go-to-top](#index)
 
 1. [Literals](#literals)
 1. [Loops](#loops)
@@ -36,7 +39,9 @@ A python cheat sheet for competitive programming (quick reference guide)
 1. [Types](#types)
 1. [Grids](#grids)
 
-[Collections](#collections)
+### [go-to-top](#index)
+[Collections](#collections)                                    
+
 1. [Deque](#deque)
 1. [Counter](#counter)
 1. [Default Dict](#default-dict)
@@ -76,6 +81,8 @@ A python cheat sheet for competitive programming (quick reference guide)
 
 # Language Mechanics
 
+### [go-to-top](#index)
+
 ## Literals
 
 ```python
@@ -94,7 +101,7 @@ True, False                  # bool constants, 1 == True, 0 == False
 'a', 'e', 'i', 'o', 'u'}     # Set
 None                         # Null var
 ```
-
+### [go-to-top](#index)
 ## Loops
 
 Go through all elements
@@ -142,7 +149,7 @@ for i in range(len(A)//2): # A = [0,1,2,3,4,5]
   print(~i) # -1,-2,-3
   print(A[~i]) # 5,4,3
 ```
-
+### [go-to-top](#index)
 ## Strings
 
 ```python
@@ -271,7 +278,7 @@ Print string with all chars, useful for debugging
 ```python
 print(repr("meh\n"))     # 'meh\n'
 ```
-
+### [go-to-top](#index)
 ## Slicing
 
 Slicing [intro](https://stackoverflow.com/questions/509211/understanding-slice-notation)
@@ -302,7 +309,7 @@ for i in range(len(numList)):
     newList = numList[0:i] + numList[i+1:len(numList)]
     print(newList) # [2, 3, 4], [1, 3, 4], [1, 2, 4], [1, 2, 3]
 ```
-
+### [go-to-top](#index)
 ## Tuple
 
 Collection that is ordered and unchangable
@@ -322,7 +329,7 @@ def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         d[key].append(w)
     return d.values()
 ```
-
+### [go-to-top](#index)
 ## Sort
 
 sorted(iterable, key=key, reverse=reverse)
@@ -384,7 +391,7 @@ sorted(ans.items()) # [(-3, [(8, 5)]), (-1, [(10, 1), (3, 3)]), (0, [(0, 0), (2,
 [ans[i] for i in sorted(ans)]
 # [[(8, 5)], [(10, 1), (3, 3)], [(0, 0), (2, 2), (7, 4)]]
 ```
-
+### [go-to-top](#index)
 ## Hash
 
 ```python
@@ -412,7 +419,7 @@ s &= set('bd') # {'d', 'b'} only elements from new set
 s -= set('b') # {'d'} remove elements from new set
 s ^= set('abd') # {'a', 'b'} elements from s or new but not both
 ```
-
+### [go-to-top](#index)
 ## List
 
 Stacks are implemented with Lists. Stacks are good for parsing and graph traversal
@@ -446,7 +453,7 @@ list1 = ["a", "b" , "c"]
 list2 = [1, 2, 3]
 list3 = list1 + list2 # ['a', 'b', 'c', 1, 2, 3]
 ```
-
+### [go-to-top](#index)
 ## Dict
 
 Hashtables are implemented with dictionaries
@@ -471,6 +478,7 @@ votes = ["ABC","CBD","BCA"]
 rnk = {v:[0] * len(votes[0]) for v in votes[0]} 
 print(rnk) # {'A': [0, 0, 0], 'B': [0, 0, 0], 'C': [0, 0, 0]}
 ```
+### [go-to-top](#index)
 ## Tree
 
 1. A [tree](https://www.geeksforgeeks.org/some-theorems-on-trees/) is an undirected [graph](https://www.cs.sfu.ca/~ggbaker/zju/math/trees.html) in which any two vertices are
@@ -485,7 +493,7 @@ connected by exactly one path.
 1. G is connected and has no cycles.
 1. G is connected but would become disconnected if any single edge is removed from G.
 
-
+### [go-to-top](#index)
 ## BinaryTree
 
 
@@ -663,7 +671,7 @@ def balanceBST(self, root: TreeNode) -> TreeNode:
         return root
     return bst(self.inorder)
 ```
-
+### [go-to-top](#index)
 ## Graph
 
 Build an [adjecency graph](https://www.khanacademy.org/computing/computer-science/algorithms/graph-representation/a/representing-graphs) from edges list
@@ -700,7 +708,7 @@ def dfs(node, par=-1):
             res = dfs(nei, node)
 dfs(0) # 1->2->3->4->5
 ```
-
+### [go-to-top](#index)
 ## Heapq
 ```
       1
@@ -752,7 +760,7 @@ def topKFrequent(self, words: List[str], k: int) -> List[str]:
     freq = Counter(words)
     return heapq.nsmallest(k, freq.keys(), lambda x:(-freq[x], x))
 ```
-
+### [go-to-top](#index)
 ## Lambda
 
 Can be used with (list).sort(), sorted(), min(), max(), (heapq).nlargest,nsmallest(), map()
@@ -781,7 +789,7 @@ Lambda can sort by 1st, 2nd element in tuple
 sorted([('abc', 121),('bbb',23),('abc', 148),('bbb', 24)], key=lambda x: (x[0],x[1]))
 # [('abc', 121), ('abc', 148), ('bbb', 23), ('bbb', 24)]
 ```
-
+### [go-to-top](#index)
 ## Zip
 
 Combine two dicts or lists
@@ -876,7 +884,7 @@ def printDiagonalMatrix(self, matrix: List[List[int]]) -> bool:
  12
 """
 ```
-
+### [go-to-top](#index)
 ## Random
 
 ```Python
@@ -897,7 +905,7 @@ random.randint(0,0) # 0
 random.randrange(0,0) # error
 random.randrange(0,2) # 0,1
 ```
-
+### [go-to-top](#index)
 ## Constants
 
 ```Python
@@ -911,7 +919,7 @@ a if condition else b
 ```Python
 test = stk.pop() if stk else '#'
 ```
-
+### [go-to-top](#index)
 ## Bitwise Operators
 ```python
 '0b{:04b}'.format(0b1100 & 0b1010) # '0b1000' and
@@ -936,7 +944,7 @@ for w1, w2 in zip(words, words[1:]): #abc, ab
         if len(w1) > len(w2):
             return ""   # Triggers since ab should be before abc, not after
 ```
-
+### [go-to-top](#index)
 ## Modulo
 
 ```python
@@ -960,7 +968,7 @@ for n in range(-8,8):
   6  1 2
   7  1 3
 ```
-
+### [go-to-top](#index)
 ## Any
 
 if any element of the iterable is True
@@ -971,7 +979,7 @@ def any(iterable):
             return True
     return False
 ```
-
+### [go-to-top](#index)
 ## All
 ```python
 def all(iterable):
@@ -980,7 +988,7 @@ def all(iterable):
             return False
     return True
 ```
-
+### [go-to-top](#index)
 ## Bisect
 
 * bisect.bisect_left returns the leftmost place in the sorted list to insert the given element
@@ -1019,7 +1027,7 @@ if s <= e:
 else:
     return [-1,-1]
 ```
-
+### [go-to-top](#index)
 ## Math
 
 Calulate power
@@ -1034,7 +1042,7 @@ Division with remainder
 divmod(8, 3) # (2, 2)
 divmod(3, 8) #  (0, 3)
 ```
-
+### [go-to-top](#index)
 ## eval
 
 Evaluates an expression
@@ -1042,7 +1050,7 @@ Evaluates an expression
 x = 1
 print(eval('x + 1'))
 ```
-
+### [go-to-top](#index)
 ## Iter
 
 Creates iterator from container object such as list, tuple, dictionary and set
@@ -1053,7 +1061,7 @@ myit = iter(mytuple)
 print(next(myit)) # apple
 print(next(myit)) # banana
 ```
-
+### [go-to-top](#index)
 ## Map
 
 map(func, *iterables)
@@ -1070,7 +1078,7 @@ results = list(map(lambda x, y: (x, y), my_strings, my_numbers)) # [('a', 1), ('
 A1 = [1, 4, 9]
 ''.join(map(str, A1))
 ```
-
+### [go-to-top](#index)
 ## Filter
 
 filter(func, iterable)
@@ -1096,7 +1104,7 @@ Get degrees == 0 from list
 ```python
 stk = list(filter(lambda x: degree[x]==0, degree.keys()))
 ```
-
+### [go-to-top](#index)
 ## Reduce
 
 reduce(func, iterable[, initial]) 
@@ -1107,7 +1115,7 @@ numbers = [3, 4, 6, 9, 34, 12]
 result = reduce(lambda x, y: x+y, numbers) # 68
 result = reduce(lambda x, y: x+y, numbers, 10) #78
 ```
-
+### [go-to-top](#index)
 ## itertools
 
 [itertools.accumulate(iterable[, func]) –> accumulate object](https://www.geeksforgeeks.org/python-itertools-accumulate/)
@@ -1123,7 +1131,7 @@ for k,v in groupby("aabbbc")    # group by common letter
     print(k)                    # a,b,c
     print(list(v))              # [a,a],[b,b,b],[c,c]
 ```
-
+### [go-to-top](#index)
 ## Regular Expression
 
 RE module allows regular expressions in python
@@ -1137,7 +1145,7 @@ def removeVowels(self, S: str) -> str:
 
 from typing import List, Set, Dict, Tuple, Optional
 [cheat sheet](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html)
-
+### [go-to-top](#index)
 ## Grids
 
 Useful helpful function
@@ -1156,7 +1164,7 @@ def dfs(r,c, index):
             area += dfs(x,y, index)
     return area + 1
 ```
-
+### [go-to-top](#index)
 # Collections
 
 Stack with appendleft() and popleft()
@@ -1238,7 +1246,7 @@ dd = defaultdict(list)
 dd['key'].append(1) # defaultdict(<class 'list'>, {'key': [1]})
 dd['key'].append(2) # defaultdict(<class 'list'>, {'key': [1, 2]})
 ```
-
+### [go-to-top](#index)
 # Algorithms
 
 ## General Tips
@@ -1258,6 +1266,7 @@ dd['key'].append(2) # defaultdict(<class 'list'>, {'key': [1, 2]})
   * Start small
   * Hit edge cases
 
+### [go-to-top](#index)
 ## Binary Search
 
 ```python
@@ -1292,7 +1301,7 @@ def mySqrt(self, x: int) -> int:
   return left - 1
 ```
 [binary search](https://leetcode.com/discuss/general-discussion/786126/python-powerful-ultimate-binary-search-template-solved-many-problems)
-
+### [go-to-top](#index)
 ## Binary Search Tree
 
 Use values to detect if number is missing
@@ -1342,7 +1351,7 @@ def isValidBST(self, root: TreeNode) -> bool:
             stk.append((node.left, floor, node.val))
     return True
 ```
-
+### [go-to-top](#index)
 ## Topological Sort
 
 [Kahn's algorithm](https://www.geeksforgeeks.org/all-topological-sorts-of-a-directed-acyclic-graph/), detects cycles through degrees and needs all the nodes represented to work 
@@ -1404,6 +1413,7 @@ def alienOrder(self, words: List[str]) -> str:
     return "".join(ans) * (set(ans) == nodes)
 ```
 
+### [go-to-top](#index)
 ## Sliding Window
 
 1. Have a counter or hash-map to count specific array input and keep on increasing the window toward right using outer loop.
@@ -1464,7 +1474,7 @@ def fruits_into_baskets(fruits):
       j += 1  
   return maxCount
 ```
-
+### [go-to-top](#index)
 ## Greedy
 
 Make the optimal [choice](https://brilliant.org/wiki/greedy-algorithm/) at each step. 
@@ -1484,7 +1494,7 @@ def increasingTriplet(self, nums: List[int]) -> bool:
     
     return False
 ```
-
+### [go-to-top](#index)
 ## Tree Tricks
 
 Bottom up solution with arguments for min, max
@@ -1520,7 +1530,7 @@ def binaryTreePaths(self, root: TreeNode) -> List[str]:
             stk.append((node.right, path + "->" + str(node.right.val)))
     return rtn
 ```
-
+### [go-to-top](#index)
 Using return value to sum
 ```python
 def diameterOfBinaryTree(self, root: TreeNode) -> int:
@@ -1568,7 +1578,7 @@ def distanceK(self, root: TreeNode, target: TreeNode, K: int) -> List[int]:
     dfs(target, None, 0)
     return rtn
 ```
-
+### [go-to-top](#index)
 ## Anagrams
 
 Subsection of sliding window, solve with Counter Dict
@@ -1610,7 +1620,7 @@ def findAnagrams(self, s: str, p: str) -> List[int]:
 ```
 
 
-
+### [go-to-top](#index)
 ## Dynamic Programming
 
 1. [dynamic programming](https://leetcode.com/discuss/general-discussion/458695/Dynamic-Programming-Patterns)
@@ -1646,7 +1656,7 @@ def longestCommonSubsequence(self, text1: str, text2: str) -> int:
 ```
 
 
-
+### [go-to-top](#index)
 ## Cyclic Sort
 
 1. Useful algo when sorting in place
@@ -1665,7 +1675,7 @@ def cyclic_sort(nums):
       i += 1
   return nums
 ```
-
+### [go-to-top](#index)
 ## Quick Sort
 
 1. Can be modified for divide in conquer problems
@@ -1689,7 +1699,7 @@ def quickSort(array):
 	sort(array, 0, len(array)-1)
 	return array
 ```
-
+### [go-to-top](#index)
 ## Merge Sort
 
 ```python
@@ -1763,7 +1773,7 @@ def mergeKLists(self, lists: List[ListNode]) -> ListNode:
     return prehead.next
 ```
 
-
+### [go-to-top](#index)
 ## Linked List
 
 1. Solutions typically require 3 pointers: current, previous and next
@@ -1815,7 +1825,7 @@ def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
     
     return dummy.next 
 ```
-
+### [go-to-top](#index)
 ## Convert Base
 
 1. Typically two steps. A digit modulo step and a integer division step by the next base then reverse the result or use a deque()
@@ -1884,7 +1894,7 @@ def minRemoveToMakeValid(self, s: str) -> str:
     rtn[stk.pop()] = ''
   return "".join(rtn)
 ```
-
+### [go-to-top](#index)
 ## Max Profit Stock
 
 Infinite Transactions, [base formula](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/discuss/75924/Most-consistent-ways-of-dealing-with-the-series-of-stock-problems)
@@ -1918,7 +1928,7 @@ for p in prices:
         t1[i] = max(t1[i], t0[i-1] - p)
 return t0[k]
 ```
-
+### [go-to-top](#index)
 ## Shift Array Right
 Arrays can be shifted right by reversing the whole string, and then reversing 0,k-1 and k,len(str)
 ```python
@@ -1991,7 +2001,7 @@ def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[Lis
             merged.append(i)
     return merged
 ```
-
+### [go-to-top](#index)
 ## Trie
 
 Good for autocomplete, spell checker, IP routing (match longest prefix), predictive text, solving word games
@@ -2050,7 +2060,7 @@ def search(self, word: str) -> bool:
         return '$' in node
     return searchNode(word, self.trie)
 ```
-
+### [go-to-top](#index)
 ## Kadane
 
 local_maxiumum[i] = max(A[i], A[i] + local_maximum[i-1])
@@ -2065,7 +2075,7 @@ def maxSubArray(self, nums: List[int]) -> int:
             nums[i] += nums[i-1]
     return max(nums) # max([-2,1,-2,4,3,5,6,1,5]) = 6
 ```
-
+### [go-to-top](#index)
 ## Union Find
 
 [Union Find](https://www.geeksforgeeks.org/union-find/) is a useful algorithm for graph
@@ -2139,7 +2149,7 @@ def myPow(self, x: float, n: int) -> float:
         n = n // 2
     return ans
 ```
-
+### [go-to-top](#index)
 ## Fibonacci Golden
 
 Fibonacci can be calulated with [Golden Ratio](https://demonstrations.wolfram.com/GeneralizedFibonacciSequenceAndTheGoldenRatio/)
@@ -2231,7 +2241,7 @@ def pick(self, target):
                 res = i
     return res
 ```
-
+### [go-to-top](#index)
 ## String Subsequence
 
 Can find the min number of subsequences of strings in some source through binary search and a dict of the indexes of the source array
@@ -2276,7 +2286,7 @@ def removeDuplicates(self, s: str, k: int) -> str:
         ans.extend([c[0]] * c[1])
     return "".join(ans)
 ```
-
+### [go-to-top](#index)
 ## Dutch Flag
 
 [Dutch National Flag Problem](https://en.wikipedia.org/wiki/Dutch_national_flag_problem) proposed by [Edsger W. Dijkstra](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra)
@@ -2303,17 +2313,3 @@ def sortColors(self, nums: List[int]) -> None:
         else:
             curr += 1
 ```
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
