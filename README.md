@@ -153,6 +153,44 @@ for i in range(len(A)//2): # A = [0,1,2,3,4,5]
 ## Strings
 
 ```python
+s = 'hariraj'
+chr(65) # returns 'A' ascii to character
+ord('A') # returns 65 character to ascii
+s.upper() #upper case string
+s.lower() #lower case string
+s.title() #converts first character of each word to uppercase
+s.capitalize() # First character capitalized
+s.casefold() #converts into lowercase
+s.count('1') # counts the element passed as argument
+s.isalnum() #checks whether string is alphanumeric
+s.isalpha() #checks whether string is collection of alphabets
+s.isdecimal() #checks whether string is a decimal number
+s.isdigit() #checks whether string is a digit
+s.isnumeric() #checks whether string is a number
+s.isspace() #TRUE if all characters are whitespaces
+s.isdecimal() #checks whether string is a decimal
+s.islower() #checks the string is lowercase
+s.isupper() #checks whether string is uppercase
+s.startswith('substring or character to be checked')
+s.endswith('substring or character to be checked')
+s.isascii() #checks whether string is ascii
+s.find('1') # finds the index of the first occurrence of the element passed as argument
+s.index('1') # finds the index of the first occurrence of the element
+s.replace(s,s1) #replace s-old with s1-new
+s.strip() #removes leading and trailing whitespaces
+s.lstrip() #left strip
+s.rstrip() #right strip
+s.split() # splits the string and returns a list of strings
+s.splitlines() # Return a list of the lines in the string, breaking at line boundaries.
+min('strings') # returns the character with the lowest index 
+max('strings') # returns the character with the highest index
+s.partition('substring') # returns a tuple containing  (before the partition, the partition itself, after the partition)
+s.join() # joins the string with the iterable passed as argument
+'-'.join(['a','b','c'])
+#=> 'a-b-c'
+
+```
+```python
 str1.find('x')          # find first location of char x and return index
 str1.rfind('x')         # find first int location of char x from reverse
 ```
@@ -315,8 +353,26 @@ for i in range(len(numList)):
 Collection that is ordered and unchangable
 
 ```python
-thistuple = ("apple", "banana", "cherry")
-print(thistuple[1]) # banana
+t = (1,2,3,4,5,6,7,8,9,10)
+tuple1 = ("a", "b" , "c")
+tuple2 = (1, 2, 3)
+tuple3 = tuple1 + tuple2 # Join two tuples:
+new_tuple = t*3 # this will create a new tuple with the values of t repeated 3 times
+# Note: The number of variables must match the number of values in the tuple, if not, you must use an asterisk to collect the remaining values as a list.
+fruits = ("apple", "banana", "cherry", "strawberry", "raspberry")
+(green, yellow, *red) = fruits
+print(t[:]) # Prints all elements of the tuple.
+print(t[1:8:2]) # Prints elements starting from index 1 to 7 skipping one value, prints 2,4,6,8.
+print(t[::-1]) # Prints elements in reverse order.
+t.count(5) # returns 1
+t.index(5) # returns 5
+list(t).remove(5) # removes the first 5
+t = tuple(list(t)) # converts the list back to a tuple
+# As tuples are immutable always convert tuples to lists and modify the items and then convert the list back to a tuple.
+# Tuples are faster than lists, in creation and in accessing.
+# Tuples are immutable, meaning that once created, they cannot be changed.
+# Tuples are faster than lists, because they are immutable.
+# Tuples occupies less memory than lists.
 ```
 
 Can be used with Dicts
@@ -402,6 +458,35 @@ for c in s1: # Adds counter for c
 ## Set
 
 ```python
+# A set is a collection which is unordered, unchangeable*, and unindexed.
+# * Note: Set items are unchangeable, but you can remove items and add new items.
+# Sets cannot have two items with the same value.
+# Sets are written with curly brackets, and items in a set must be unique.
+s = set([9,8,7])
+s.add(1) # adds element 1 to the set
+new_set = s.copy() # creates a copy of the set
+new_set.clear() # removes all elements from the set
+new_set.discard(1) # removes element 1 from the set
+new_set.difference_update(s) # removes all elements from the set that are present in the set s
+new_set.intersection_update(s) # removes all elements from the set that are not present in the set s
+new_set.pop() # removes and returns an arbitrary element from the set
+new_set.remove(1) # removes element 1 from the set
+new_set.symmetric_difference_update(s) # removes all elements from the set that are present in both the set s and the set
+new_set.union(s) # returns a new set with all elements from both sets
+new_set.update(s) # adds all elements from the set s to the set
+new_set.difference(s) # returns a new set with all elements from the set that are not present in the set s
+new_set.intersection(s) # returns a new set with all elements from the set that are present in both the set s and the set
+new_set.symmetric_difference(s) # returns a new set with all elements from the set that are present in the set s or the set but not both
+new_set.isdisjoint(s) # returns True if the set has no elements in common with the set s
+new_set.issubset(s) # returns True if every element in the set is present in the set s
+new_set.issuperset(s) # returns True if every element in the set s is present in the set
+# 'immutable set' is called as 'frozenset'
+f = frozenset([1,2,3,4,5,6,7,8]) # Build an immutable unordered collection of unique elements.
+f.add(1)
+print(f)
+```
+
+```python
 a = 3
 st = set()
 st.add(a) # Add to st
@@ -485,6 +570,66 @@ list3 = list1 + list2 # ['a', 'b', 'c', 1, 2, 3]
 ## Dict
 
 Hashtables are implemented with dictionaries
+
+```python
+d = {
+   "brand": "Ford",
+   "model": "Mustang",
+   "year": 1964
+}
+d["brand"] = "Fiat" # update existing entry
+d["color"] = "white" # add new entry
+d["year"] = 2018 # update existing entry
+d.items() # dict_items([('brand', 'Fiat'), ('model', 'Mustang'), ('color', 'white'), ('year', 2018)])
+d.keys() # dict_keys(['brand', 'model', 'color', 'year'])
+d.values() # dict_values(['Fiat', 'Mustang', 'white', 2018])
+d.pop("model") # Mustang
+d.popitem() # ('color', 'white')
+d.clear() # {}
+d.get("model") # None (no model key)
+d.get("model", "Ford") # Ford (default value)
+d.update({"model": "Mustang"}) # {'model': 'Mustang'}
+d.update({"model": "Mustang", "color": "white"}) # {'model': 'Mustang', 'color': 'white'}
+d.setdefault("model", "Mustang") # Mustang (no model key) (default value) (same as d.get("model", "Mustang")) 
+
+# 𝙜𝙚𝙩 𝙠𝙚𝙮𝙨 𝙛𝙧𝙤𝙢 𝙫𝙖𝙡𝙪𝙚𝙨
+d = {'key1': 'aaa', 'key2': 'aaa', 'key3': 'bbb'}
+def get_keys_from_value(d, val):
+    return [k for k, v in d.items() if v == val]
+
+keys = get_keys_from_value(d, 'aaa')
+print(keys)
+# ['key1', 'key2']
+for k, v in d.items():
+    if v == 'aaa':
+      print(k)
+# key1 
+# key2
+
+# iterate through a dictionary
+for k, v in d.items():
+    print(k, v)
+# key1 aaa
+# key2 aaa
+# key3 bbb
+
+d.sort() # TypeError: 'dict' object is not sortable
+print(d) # {'key1': 'aaa', 'key2': 'aaa', 'key3': 'bbb'}
+print(sorted(d)) # [('key1', 'aaa'), ('key2', 'aaa'), ('key3', 'bbb')]
+
+# sum of two numbers
+print(sum([1, 2, 3, 4, 5])) # 15
+print(sum([1, 2, 3, 4, 5], 10)) # 25
+print(sum([1, 2, 3, 4, 5], 10, 100)) # 125  
+
+
+# print the sum of all the numbers in a list
+print(sum([1, 2, 3, 4]))
+
+# reverse a list
+print(list(reversed([1, 2, 3, 4])))
+
+```
 
 ```python
 d = {'key': 'value'}         # Declare dict{'key': 'value'}
@@ -1230,10 +1375,23 @@ d.reverse()  # reverses the deque and returns None
 
 ```python
 from collections import Counter
-count = Counter("hello") # Counter({'h': 1, 'e': 1, 'l': 2, 'o': 1})
-count['l'] # 2
-count['l'] += 1
-count['l'] # 3
+mylist = [1,2,3,4,5,6,7,8,2,2,1,1,1,1,4,5,7]
+mycount = Counter(mylist) # returns a dictionary (key, value) --> (object, count)
+print(mycount)
+print(mycount.items()) # returns a list of key value pairs
+print(mycount.keys()) # returns a list of keys
+print(mycount.values()) # returns a list of values
+print(mycount.most_common(2)) # most_common(<no. of most common key value pairs required>) --> returns most common pairs i.e, element with maximum count
+# most_common will return a list of tuples containing key value pairs --> [(key1, count1), (key2, count2)] for most_common(2)
+# access using most_common(1)[0] --> gives 1st tuple pair (key1, count1)
+# access using most_common(1)[0][0] --> gives 1st tuple key --> key1
+# access using most_common(1)[0][1] --> gives 1st tuple value --> count1
+print(mycount.elements()) # returns a list of elements
+
+from collections import Counter
+mylist = [1,2,3,4,5,6,7,8,2,2,1,1,1,1,4,5,7]
+mycount = Counter(mylist)
+print(list(mycount.elements()))
 ```
 
 Get counter k most common in list of tuples
