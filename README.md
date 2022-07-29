@@ -425,6 +425,32 @@ s ^= set('abd') # {'a', 'b'} elements from s or new but not both
 Stacks are implemented with Lists. Stacks are good for parsing and graph traversal
 
 ```python
+
+# Dynamic Sized Array that allows insertions and deletions without caring of size of the array.
+# insertion --> O(n)
+# deletions --> O(n) when used pop to remove last element --> O(1) middle elements --> O(n)
+# Accessing --> O(1)
+
+l = ['hari','raj','krishna']
+l.sort() # sorts list in ascending order
+l.sort(reverse=True) # sorts list in descending order
+l.sort(key=lambda x: len(x)) # sorts list based on length of the string
+l.extend(list2) # appends list2 to list1
+l.insert(0, 'hari') # inserts 'hari' at index 0
+l.remove('hari') # removes 'hari' from list
+l.pop() # removes last item from list and returns it
+l.pop(0) # removes item at index 0
+l.clear() # removes all items from list
+l.index('hari') # returns index of 'hari'
+l.count('hari') # returns count of 'hari'
+l.append(1) # appends 1 to list
+l.copy() # copies list
+l.reverse() # reverse list
+l+=list2 # appends list2 to list1
+
+```
+
+```python
 test = [0] * 100 # initialize list with 100 0's
 ```
 
@@ -453,6 +479,8 @@ list1 = ["a", "b" , "c"]
 list2 = [1, 2, 3]
 list3 = list1 + list2 # ['a', 'b', 'c', 1, 2, 3]
 ```
+
+
 ### [go-to-top](#index)
 ## Dict
 
