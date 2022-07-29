@@ -4,7 +4,6 @@ A python cheat sheet for competitive programming (quick reference guide)
 # index
 [Language Mechanics](#language-mechanics)
 
-[go-to-top](#index)
 
 1. [Literals](#literals)
 1. [Loops](#loops)
