@@ -1172,18 +1172,30 @@ Stack with appendleft() and popleft()
 ## Deque
 
 ```python
+# pop operations at front and back --> O(1)
+# insert operations at back and front --> O(1)
+# Rotation of the
 from collections import deque
-deq = deque([1, 2, 3])
-deq.appendleft(5)
-deq.append(6)
-deq
-deque([5, 1, 2, 3, 6])
-deq.popleft()
-5
-deq.pop()
-6
-deq
-deque([1, 2, 3])
+
+d = deque()
+d.append(1)  # adds at the end (right)
+d.appendleft(2)  # adds at the front end (left)
+d.pop()  # removes at the end (right)
+d.popleft()  # removes at the front (left)
+d.clear()  # removes all the elements
+d.extend([1, 2, 3])  # adds a list of elements at the end (right)
+d.extendleft([4, 5, 6])  # adds a list of elements at the front (left)
+d.rotate(1)  # rotates the deque (right) by 1 place
+d.rotate(2)  # rotates the deque (right) by 2 places
+d.rotate(-1)  # rotates the deque (left) by 1 place
+d.rotate(-2)  # rotates the deque (left) by 2 places
+d.remove(3)  # removes the first element that matches the given value
+d.count(3)  # counts the number of elements in the deque
+val = 3
+index = 4
+d.insert(val, index)  # inserts the given value at the given index
+d.reverse()  # reverses the deque and returns None
+
 ```
 
 ## Counter
