@@ -159,7 +159,7 @@ s.upper() #upper case string
 s.lower() #lower case string
 s.title() #converts first character of each word to uppercase
 s.capitalize() # First character capitalized
-s.casefold() #converts into lowercase
+s.casefold() #converts lower into upper and upper into lower case
 s.count('1') # counts the element passed as argument
 s.isalnum() #checks whether string is alphanumeric
 s.isalpha() #checks whether string is collection of alphabets
@@ -181,8 +181,8 @@ s.lstrip() #left strip
 s.rstrip() #right strip
 s.split() # splits the string and returns a list of strings
 s.splitlines() # Return a list of the lines in the string, breaking at line boundaries.
-min('strings') # returns the character with the lowest index 
-max('strings') # returns the character with the highest index
+min('strings') # returns the character with the lowest ascii value 
+max('strings') # returns the character with the highest ascii value
 s.partition('substring') # returns a tuple containing  (before the partition, the partition itself, after the partition)
 s.join() # joins the string with the iterable passed as argument
 '-'.join(['a','b','c'])
